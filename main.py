@@ -22,6 +22,14 @@ while True:
                 screen_x = screen_w / frame_w * x
                 screen_y = screen_h / frame_h * y
                 pyautogui.moveTo(screen_x, screen_y)
+                right = [landmarks[374], landmarks[386]]
+                for landmark in right:
+                    x = int(landmark.x * frame_w)
+                    y = int(landmark.y * frame_h)
+                    cv2.cricle(frame, (x,y), 3, (255, 255, 255))
+                if right[0].y - right[1].y < 0.02:
+                    pyautogui.click(button='right')
+                    pyautogui.sleep(1)
             left = [landmarks[145], landmarks[159]]
             for landmark in left:
                 x = int(landmark.x * frame_w)
