@@ -26,7 +26,7 @@ while True:
                 for landmark in right:
                     x = int(landmark.x * frame_w)
                     y = int(landmark.y * frame_h)
-                    cv2.cricle(frame, (x,y), 3, (255, 255, 255))
+                    cv2.circle(frame, (x,y), 3, (255, 255, 255))
                 if right[0].y - right[1].y < 0.02:
                     pyautogui.click(button='right')
                     pyautogui.sleep(1)
